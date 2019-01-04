@@ -1,36 +1,33 @@
-import React, { Component } from 'react';
-import { Combobox } from '@salesforce/design-system-react';
-// import Icon from '@salesforce/design-system-react/components/icon';
-import IconSettings from '@salesforce/design-system-react/components/icon-settings';
-// import icons from '../assets/icons/';
+import React, { Component } from "react";
+import { Combobox } from "@salesforce/design-system-react";
 
 class Dropdown extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      inputValue: '',
-      selection: [],
-      accounts: [
+      inputValue: "",
+      // selection: [],
+      cities: [
         {
-          id: '1',
-          label: 'Milwaukee',
-          subTitle: ''
+          id: "1",
+          label: "Milwaukee",
+          subTitle: ""
         },
         {
-          id: '2',
-          label: 'Minneapolis',
-          subTitle: ''
+          id: "2",
+          label: "Minneapolis",
+          subTitle: ""
         },
         {
-          id: '3',
-          label: 'Chicago',
-          subTitle: ''
+          id: "3",
+          label: "Chicago",
+          subTitle: ""
         },
         {
-          id: '4',
-          label: 'Dallas',
-          subTitle: ''
+          id: "4",
+          label: "Dallas",
+          subTitle: ""
         }
       ]
     };
@@ -41,19 +38,19 @@ class Dropdown extends Component {
       <Combobox
         id="cities-comboBox"
         labels={{
-          label: 'Select a city',
-          placeholder: ''
+          label: "Select a city",
+          placeholder: ""
         }}
         events={{
           onSelect: (event, data) => {
             this.setState({
-              inputValue: '',
+              inputValue: "",
               selection: [data.selection.pop()]
             });
           }
         }}
         multiple
-        options={this.state.accounts}
+        options={this.state.cities}
         selection={this.state.selection}
         value={this.state.inputValue}
         variant="readonly"
