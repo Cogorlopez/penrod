@@ -1,39 +1,14 @@
-import React, { Component } from "react";
-import "./App.css";
-import IconSettings from "@salesforce/design-system-react/components/icon-settings";
-import Header from "./components/Layout/Header";
-import DdMenu from "./components/DdMenu";
-import { DataTable, DataTableColumn } from "@salesforce/design-system-react";
-import isEmpty from "./functions/isEmpty";
-import toString from "./functions/toString";
-import axios from "axios";
+import React, { Component } from 'react';
+import './App.css';
+import IconSettings from '@salesforce/design-system-react/components/icon-settings';
+import axios from 'axios';
+import DropDown from './components/ButtonGroup/DropDown';
+import SubmitButton from './components/ButtonGroup/SubmitButton';
+import Header from './components/Layout/Header';
+import WeatherTable from './components/WeatherDisplay/WeatherTable';
+import isEmpty from './functions/isEmpty';
 
-const KEY = "a241c5fc2c73eae33882948459c495ef";
-
-const columns = [
-  <DataTableColumn key="name" label="City" property="name" width="6em" />,
-
-  <DataTableColumn
-    key="currentTemp"
-    label="Current Temperature"
-    property="temp"
-    width="5em"
-  />,
-
-  <DataTableColumn
-    key="minTemp"
-    label="Min Temperature"
-    property="temp_min"
-    width="5em"
-  />,
-
-  <DataTableColumn
-    key="maxTemp"
-    label="Max Temperature"
-    property="temp_max"
-    width="5em"
-  />
-];
+const KEY = 'a241c5fc2c73eae33882948459c495ef';
 
 class App extends Component {
   constructor(props) {
@@ -44,15 +19,16 @@ class App extends Component {
     this.resetWeather = this.resetWeather.bind(this);
 
     this.state = {
-      inputValue: "",
+      inputValue: '',
       selection: {
-        label: "Please choose a city"
+        label: 'Please choose a city'
       },
       weather: []
     };
   }
 
   getWeather = () => {
+    //Clears previous city data when fetching new city
     this.resetWeather();
     axios
       .get(
@@ -61,7 +37,8 @@ class App extends Component {
         }&units=imperial&appid=${KEY}`
       )
       .then(res => {
-        //   console.log(res.data);
+        //Doing this to move the main properites up to the top level
+        //Needed for correctly getting data to DataTable
         let obj = res.data.main;
         let merged = { ...res.data, ...obj };
 
@@ -84,38 +61,20 @@ class App extends Component {
     return (
       <div className="App">
         <IconSettings iconPath="/assets/icons/">
-          {/* <GlobalHeader style={{ position: "static" }} /> */}
           <Header />
           <ul className="slds-button-group-row slds-m-top_small">
-            <li className="slds-button-group-item">
-              <DdMenu
-                onSelection={this.setSelection}
-                selection={this.state.selection}
-              />
-            </li>
-            <li className="slds-button-group-item">
-              {this.state.selection.label === "Please choose a city" ? null : (
-                <button
-                  className="slds-button slds-button_neutral"
-                  onClick={() => this.getWeather()}
-                >
-                  Submit
-                </button>
-              )}
-            </li>
+            <DropDown
+              onSelect={this.setSelection}
+              selection={this.state.selection}
+            />
+            <SubmitButton
+              handleClick={this.getWeather}
+              selection={this.state.selection}
+            />
           </ul>
-          <div>
-            {isEmpty(this.state.weather) ? null : (
-              <DataTable
-                className="slds-m-top_small"
-                items={toString(this.state.weather)}
-                id="DataTableExample-1-default"
-                fixedLayout
-              >
-                {columns}
-              </DataTable>
-            )}
-          </div>
+          {isEmpty(this.state.weather) ? null : (
+            <WeatherTable weather={this.state.weather} />
+          )}
         </IconSettings>
       </div>
     );
