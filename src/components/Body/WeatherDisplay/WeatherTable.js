@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataTable } from '@salesforce/design-system-react';
-import toString from '../../functions/toString';
+import toString from '../../../functions/toString';
 
 import Columns from './Columns';
 

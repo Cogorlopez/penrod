@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Logo from './Logo';
 import Title from './Title';
-import ToolbarContainer from './ToolbarContainer';
+import ToolbarContainer from './ToolbarContainer/ToolbarContainer';
 
 export default class Header extends Component {
   render() {

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import IconSettings from '@salesforce/design-system-react/components/icon-settings';
 import axios from 'axios';
-import DropDown from './components/ButtonGroup/DropDown';
-import SubmitButton from './components/ButtonGroup/SubmitButton';
+import DropDown from './components/Body/ButtonGroup/DropDown';
+import SubmitButton from './components/Body/ButtonGroup/SubmitButton';
 import Header from './components/Layout/Header';
-import WeatherTable from './components/WeatherDisplay/WeatherTable';
+import WeatherTable from './components/Body/WeatherDisplay/WeatherTable';
 import isEmpty from './functions/isEmpty';
 
 const KEY = 'a241c5fc2c73eae33882948459c495ef';
