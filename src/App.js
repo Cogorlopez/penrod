@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import IconSettings from '@salesforce/design-system-react/components/icon-settings';
 import axios from 'axios';
-import DropDown from './components/Body/ButtonGroup/DropDown';
-import SubmitButton from './components/Body/ButtonGroup/SubmitButton';
+import DropDown from './components/Body/Inputs/DropDown';
+import SubmitButton from './components/Body/Inputs/SubmitButton';
 import Header from './components/Layout/Header';
 import WeatherTable from './components/Body/WeatherDisplay/WeatherTable';
 import isEmpty from './functions/isEmpty';
@@ -72,6 +72,10 @@ class App extends Component {
               selection={this.state.selection}
             />
           </ul>
+          {/*
+            If weather data has been retrieved, display the weather 
+            DataTable. Otherwsie display nothing
+          */}
           {isEmpty(this.state.weather) ? null : (
             <WeatherTable weather={this.state.weather} />
           )}
