@@ -6,21 +6,21 @@ const Columns = [
 
   <DataTableColumn
     key="currentTemp"
-    label="Current Temperature"
+    label="Current Temperature (f)"
     property="temp"
     width="5em"
   />,
 
   <DataTableColumn
     key="minTemp"
-    label="Min Temperature"
+    label="Min Temperature (f)"
     property="temp_min"
     width="5em"
   />,
 
   <DataTableColumn
     key="maxTemp"
-    label="Max Temperature"
+    label="Max Temperature (f)"
     property="temp_max"
     width="5em"
   />

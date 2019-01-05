@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when there is a weather object passed to it 1`] = `
+<div
+  className="slds-m-top_small"
+>
+  <table
+    className="slds-table slds-table_fixed-layout slds-table_resizable-cols slds-table_bordered slds-m-top_small"
+    id="DataTableExample-1-default"
+    role="grid"
+  >
+    <thead>
+      <tr
+        className="slds-line-height_reset"
+      >
+        <th
+          aria-label="City"
+          aria-sort="none"
+          className="slds-text-title_caps"
+          scope="col"
+          style={
+            Object {
+              "height": null,
+              "lineHeight": null,
+              "width": "6em",
+            }
+          }
+        >
+          <span
+            className="slds-p-horizontal_x-small"
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <span
+              className="slds-truncate"
+              title="City"
+            >
+              City
+            </span>
+          </span>
+        </th>
+        <th
+          aria-label="Current Temperature (f)"
+          aria-sort="none"
+          className="slds-text-title_caps"
+          scope="col"
+          style={
+            Object {
+              "height": null,
+              "lineHeight": null,
+              "width": "5em",
+            }
+          }
+        >
+          <span
+            className="slds-p-horizontal_x-small"
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <span
+              className="slds-truncate"
+              title="Current Temperature (f)"
+            >
+              Current Temperature (f)
+            </span>
+          </span>
+        </th>
+        <th
+          aria-label="Min Temperature (f)"
+          aria-sort="none"
+          className="slds-text-title_caps"
+          scope="col"
+          style={
+            Object {
+              "height": null,
+              "lineHeight": null,
+              "width": "5em",
+            }
+          }
+        >
+          <span
+            className="slds-p-horizontal_x-small"
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <span
+              className="slds-truncate"
+              title="Min Temperature (f)"
+            >
+              Min Temperature (f)
+            </span>
+          </span>
+        </th>
+        <th
+          aria-label="Max Temperature (f)"
+          aria-sort="none"
+          className="slds-text-title_caps"
+          scope="col"
+          style={
+            Object {
+              "height": null,
+              "lineHeight": null,
+              "width": "5em",
+            }
+          }
+        >
+          <span
+            className="slds-p-horizontal_x-small"
+            style={
+              Object {
+                "display": "flex",
+              }
+            }
+          >
+            <span
+              className="slds-truncate"
+              title="Max Temperature (f)"
+            >
+              Max Temperature (f)
+            </span>
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className=""
+      >
+        <td
+          className={null}
+          role="gridcell"
+          style={
+            Object {
+              "width": "6em",
+            }
+          }
+        >
+          <div
+            className="slds-truncate"
+            title="Milwaukee"
+          >
+            Milwaukee
+          </div>
+        </td>
+        <td
+          className={null}
+          role="gridcell"
+          style={
+            Object {
+              "width": "5em",
+            }
+          }
+        >
+          <div
+            className="slds-truncate"
+            title="31.28"
+          >
+            31.28
+          </div>
+        </td>
+        <td
+          className={null}
+          role="gridcell"
+          style={
+            Object {
+              "width": "5em",
+            }
+          }
+        >
+          <div
+            className="slds-truncate"
+            title="26.6"
+          >
+            26.6
+          </div>
+        </td>
+        <td
+          className={null}
+          role="gridcell"
+          style={
+            Object {
+              "width": "5em",
+            }
+          }
+        >
+          <div
+            className="slds-truncate"
+            title="35.06"
+          >
+            35.06
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
